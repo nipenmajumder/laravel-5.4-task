@@ -131,11 +131,9 @@ $(document).ready(function () {
 
 function loaddata() {
   let dept = $("#filter_dept").val();
-  console.log("dept", dept);
   let bloodgroup = $("#filter_blood").val();
-  console.log("blood", bg);
 
-  let page_link = `/student/create?dept=${dept ? dept : ""}&bg=${
+  let page_link = `/student/create?dept=${dept ? dept : ""}&bloodgroup=${
     bloodgroup ? bloodgroup : ""
   }`;
 
@@ -145,9 +143,6 @@ function loaddata() {
     datatype: "html",
     success: function (response) {
       $("#datalist").html(response);
-    },
-    error: function (error) {
-      toastr.warning("Data not exist");
     },
   });
 }
